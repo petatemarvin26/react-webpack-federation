@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "workspaces": [
-    "./main",
-    "./sign-in",
-    "./sign-up"
-  ],
+  "workspaces": {
+    "packages": [
+      "main",
+      "sign-in",
+      "sign-up"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
