@@ -1,6 +1,6 @@
 import {combineReducers} from '@reduxjs/toolkit';
 
-import signIn from 'sign-in/reducers';
+import signIn from 'auth/reducers';
 
 import app from './app';
 

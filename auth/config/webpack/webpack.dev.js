@@ -36,7 +36,7 @@ module.exports = (env) => {
         publicPath: '.'
       }),
       new ModuleFederationPlugin({
-        name: 'signin',
+        name: 'auth',
         filename: './entry.js',
         exposes: {
           '.': resolve('src/App'),

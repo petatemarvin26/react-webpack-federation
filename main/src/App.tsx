@@ -1,5 +1,4 @@
-import SignIn from 'sign-in';
-import SignUp from 'sign-up';
+import SignIn from 'auth';
 
 import {connector, DucksProps} from 'hoc';
 
@@ -12,7 +11,6 @@ const App: React.FC<Props> = ({app}) => {
   return (
     <div className={styles['app']}>
       <SignIn />
-      <SignUp />
       MAIN
     </div>
   );

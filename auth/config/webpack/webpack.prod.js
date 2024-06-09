@@ -49,7 +49,7 @@ module.exports = (env) => {
         filename: './static/css/[hash:15].css'
       }),
       new ModuleFederationPlugin({
-        name: 'signin',
+        name: 'auth',
         filename: './static/js/entry.js',
         exposes: {
           '.': resolve('src/App')
