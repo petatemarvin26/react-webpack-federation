@@ -1,10 +1,9 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import reducers from './reducers';
+import {configureStore} from '@reduxjs/toolkit';
+
+import {rootReducers} from './reducers';
 
 const store = configureStore({
-  reducer: combineReducers({
-    signIn: reducers(null)
-  })
+  reducer: rootReducers
 });
 
 export default store;

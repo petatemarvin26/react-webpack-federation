@@ -1,7 +1,8 @@
 import {ConnectedProps, connect} from 'react-redux';
 import {MapDisaptch, MapState} from './types';
 
-const mapState: MapState = ({signIn}) => ({
+const mapState: MapState = ({app, signIn}) => ({
+  app,
   signIn
 });
 
