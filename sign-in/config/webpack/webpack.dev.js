@@ -37,9 +37,10 @@ module.exports = (env) => {
       }),
       new ModuleFederationPlugin({
         name: 'signin',
-        filename: 'entry.js',
+        filename: './entry.js',
         exposes: {
-          '.': resolve('src/App')
+          '.': resolve('src/App'),
+          './reducers': resolve('src/ducks/reducers')
         },
         shared: sharedDeps
       })

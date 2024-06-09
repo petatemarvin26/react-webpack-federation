@@ -1,7 +1,12 @@
-import styles from "./App.scss";
+import {DucksProps, connector} from 'hoc';
+import styles from './App.scss';
 
-const App: React.FC = () => {
-  return <div className={styles["app"]}>SIGN IN</div>;
+type Props = {} & DucksProps;
+
+const App: React.FC<Props> = ({signIn}) => {
+  console.log(signIn, '<- SIGN-IN REDUCER');
+
+  return <div className={styles['app']}>SIGN IN</div>;
 };
 
-export default App;
+export default connector(App);

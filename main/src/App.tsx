@@ -1,9 +1,14 @@
 import SignIn from 'sign-in';
 import SignUp from 'sign-up';
 
+import {connector, DucksProps} from 'hoc';
+
 import styles from './App.scss';
 
-const App: React.FC = () => {
+type Props = {} & DucksProps;
+
+const App: React.FC<Props> = ({app}) => {
+  console.log(app, '<- MAIN REDUCER');
   return (
     <div className={styles['app']}>
       <SignIn />
@@ -13,4 +18,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default connector(App);
