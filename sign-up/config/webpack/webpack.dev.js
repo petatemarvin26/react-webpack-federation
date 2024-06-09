@@ -1,10 +1,13 @@
-const { ModuleFederationPlugin } = require("webpack").container;
-const HTMLPlugin = require("html-webpack-plugin");
+const {ModuleFederationPlugin} = require('webpack').container;
+const HTMLPlugin = require('html-webpack-plugin');
 
-const { PORT, STYLE_FILE } = require("./constants");
-const { resolve } = require("./utils");
-
-const deps = require(resolve("package.json")).dependencies;
+const {
+  PORT,
+  STYLE_FILE,
+  sharedDeps,
+  resolve,
+  styleLoader
+} = require('./common');
 
 /**
  *
@@ -13,58 +16,36 @@ const deps = require(resolve("package.json")).dependencies;
  */
 module.exports = (env) => {
   return {
-    mode: "development",
+    mode: 'development',
     devServer: {
       port: PORT,
       open: true,
-      hot: false,
+      hot: false
     },
     module: {
       rules: [
         {
           test: STYLE_FILE,
-          use: [
-            "style-loader",
-            {
-              loader: "css-loader",
-              options: {
-                modules: {
-                  namedExport: false,
-                },
-              },
-            },
-            "sass-loader",
-          ],
-        },
-      ],
+          use: styleLoader(true)
+        }
+      ]
     },
     plugins: [
       new HTMLPlugin({
-        template: resolve("public/index.html"),
-        publicPath: ".",
+        template: resolve('public/index.html'),
+        publicPath: '.'
       }),
       new ModuleFederationPlugin({
-        name: "signup",
-        filename: "entry.js",
+        name: 'signup',
+        filename: 'entry.js',
         exposes: {
-          ".": resolve('src/App.tsx'),
+          '.': resolve('src/App')
         },
-        shared: {
-          "react-dom": {
-            requiredVersion: deps["react-dom"],
-            singleton: true,
-            eager: true,
-          },
-          react: {
-            requiredVersion: deps.react,
-            singleton: true,
-            eager: true,
-          },
-        },
-      }),
+        shared: sharedDeps
+      })
     ],
     stats: {
-      logging: "error",
-    },
+      logging: 'error'
+    }
   };
 };

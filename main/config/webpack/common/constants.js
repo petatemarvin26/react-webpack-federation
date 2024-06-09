@@ -1,9 +1,11 @@
-const path = require("path");
+const path = require('path');
 
 const PORT = 3000;
-const HOST = "localhost";
+const HOST = 'localhost';
 
-const ROOT_DIR = path.resolve(__dirname, "../..");
+const ROOT_DIR = path.resolve(__dirname, '../../..');
+
+const {dependencies: deps, name} = require(ROOT_DIR + '/package.json');
 
 const TS_FILE = /\.(ts|tsx)$/;
 const JS_FILE = /\.(js|jsx)$/;
@@ -14,9 +16,11 @@ const SCSS_FILE = /\.(scss)$/;
 const STYLE_FILE = [CSS_FILE, SCSS_FILE];
 
 module.exports = {
+  deps,
+  name,
   PORT,
   HOST,
   ROOT_DIR,
   SRC_FILE,
-  STYLE_FILE,
+  STYLE_FILE
 };

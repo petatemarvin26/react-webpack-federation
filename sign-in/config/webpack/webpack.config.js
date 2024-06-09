@@ -1,14 +1,13 @@
-const TsCheck = require("fork-ts-checker-webpack-plugin");
-const TsPaths = require("tsconfig-paths-webpack-plugin");
-const { merge } = require("webpack-merge");
+const TsCheck = require('fork-ts-checker-webpack-plugin');
+const TsPaths = require('tsconfig-paths-webpack-plugin');
+const {merge} = require('webpack-merge');
 
-const devconf = require("./webpack.dev");
-const prodconf = require("./webpack.prod");
-const { SRC_FILE } = require("./constants");
-const { resolve } = require("./utils");
+const devconf = require('./webpack.dev');
+const prodconf = require('./webpack.prod');
+const {SRC_FILE, resolve} = require('./common');
 
 module.exports = (env) => {
-  const isdev = !!env["WEBPACK_SERVE"];
+  const isdev = !!env['WEBPACK_SERVE'];
 
   /**
    * @type {import('webpack').Configuration}
@@ -19,18 +18,18 @@ module.exports = (env) => {
       rules: [
         {
           test: SRC_FILE,
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            configFile: resolve("config/.babelrc"),
-          },
-        },
-      ],
+            configFile: resolve('config/.babelrc')
+          }
+        }
+      ]
     },
     plugins: [new TsCheck()],
     resolve: {
-      extensions: [".js", ".jsx", ".ts", ".tsx"],
-      plugins: [new TsPaths({ configFile: resolve("tsconfig.json") })],
-    },
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      plugins: [new TsPaths({configFile: resolve('tsconfig.json')})]
+    }
   };
 
   if (isdev) return merge(conf, devconf(env));

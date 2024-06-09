@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lerna run --parallel start",
+    "start": "lerna run start",
+    "build:start": "lerna run build:start",
     "build": "lerna run build"
   },
   "workspaces": {
