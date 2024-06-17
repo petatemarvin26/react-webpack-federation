@@ -1,19 +1,21 @@
 import {Reducer} from '@reduxjs/toolkit';
-import {combineReducers, compose} from '@reduxjs/toolkit';
+import {combineReducers} from '@reduxjs/toolkit';
 
-import app from './app';
-import auth from './auth';
+import signIn from './signIn';
+import signUp from './signUp';
 
 const reducers = combineReducers({
-  auth
+  signIn,
+  signUp
 });
 
 const rootReducers = (router: Reducer) =>
   combineReducers({
-    app,
     router,
     signIn: reducers
   });
 
-export {rootReducers};
+type AuthState = ReturnType<typeof reducers>;
+
+export {rootReducers, AuthState};
 export default reducers;

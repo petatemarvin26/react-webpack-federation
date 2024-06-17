@@ -1,7 +1,7 @@
-import {ReportDispatch, SET_REPORT} from './types';
+import {StatsDispatch, SET_STATS} from './types';
 
-const authenticated: ReportDispatch = (payload) => ({
-  type: SET_REPORT,
+const authenticated: StatsDispatch = (payload) => ({
+  type: SET_STATS,
   payload
 });
 

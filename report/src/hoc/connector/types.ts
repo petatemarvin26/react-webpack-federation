@@ -2,14 +2,12 @@ import {
   Dispatch as ReduxDispatch,
   Action as ReduxAction
 } from '@reduxjs/toolkit';
-import {AppState} from 'ducks/reducers/app/types';
-import {StatsState} from 'ducks/reducers/statistics/types';
+import {ReportState} from 'ducks/reducers';
 
 type GlobalState = {
-  app: AppState;
-  report: {
-    stats: StatsState;
-  };
+  app: any;
+  auth: any;
+  report: ReportState;
 };
 
 type MapState = {
