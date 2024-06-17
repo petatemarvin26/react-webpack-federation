@@ -15,22 +15,18 @@ const routeConfig: Array<RouteProps> = [
     element: <TestPage />
   },
   {
-    index: true,
     path: '/sign-in',
     element: <SignIn />
   },
   {
-    index: true,
     path: '/sign-up',
     element: <SignUp />
   },
   {
-    index: true,
     path: '/statistics',
     element: <Statistics />
   },
   {
-    index: true,
     path: '/graph',
     element: <Graph />
   }
