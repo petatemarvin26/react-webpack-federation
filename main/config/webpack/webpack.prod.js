@@ -51,7 +51,8 @@ module.exports = (env) => {
       new ModuleFederationPlugin({
         name: 'main',
         remotes: {
-          auth: 'auth@http://localhost:3001/static/js/entry.js'
+          auth: 'auth@http://localhost:3001/static/js/entry.js',
+          report: 'report@http://localhost:3002/static/js/entry.js'
         },
         shared: sharedDeps
       })

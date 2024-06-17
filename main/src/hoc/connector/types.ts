@@ -7,6 +7,7 @@ import {AppState} from 'ducks/reducers/app/types';
 type GlobalState = {
   app: AppState;
   signIn: any;
+  report: any;
 };
 
 type MapState = {
@@ -16,6 +17,7 @@ type MapState = {
 type MapDisaptch = {
   (dispatch: ReduxDispatch): {
     dispatch: (action: ReduxAction) => ReduxAction;
+    navigate: (path: string, state?: any) => ReduxAction;
   };
 };
 

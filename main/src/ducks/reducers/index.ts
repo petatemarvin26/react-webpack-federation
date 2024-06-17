@@ -1,6 +1,7 @@
 import {combineReducers} from '@reduxjs/toolkit';
 
 import signIn from 'auth/reducers';
+import report from 'report/reducers';
 
 import app from './app';
 
@@ -19,7 +20,9 @@ import app from './app';
 const reducers = (router: any) => {
   return combineReducers({
     app,
-    signIn: signIn()
+    router,
+    signIn,
+    report
   });
 };
 

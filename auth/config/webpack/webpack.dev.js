@@ -40,6 +40,8 @@ module.exports = (env) => {
         filename: './entry.js',
         exposes: {
           '.': resolve('src/App'),
+          './pages/SignIn': resolve('src/pages/SignIn'),
+          './pages/SignUp': resolve('src/pages/SignUp'),
           './reducers': resolve('src/ducks/reducers')
         },
         shared: sharedDeps

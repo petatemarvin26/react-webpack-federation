@@ -11,7 +11,8 @@
   "workspaces": {
     "packages": [
       "main",
-      "auth"
+      "auth",
+      "report"
     ]
   },
   "keywords": [],

@@ -26,6 +26,7 @@ const styleLoader = (isdev) => {
       options: {
         modules: {
           namedExport: false,
+          exportLocalsConvention: (n) => n,
           localIdentName: localIdentName(isdev)
         }
       }

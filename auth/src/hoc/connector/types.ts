@@ -19,6 +19,7 @@ type MapState = {
 type MapDisaptch = {
   (dispatch: ReduxDispatch): {
     dispatch: (action: ReduxAction) => ReduxAction;
+    navigate: (path: string, state?: any) => ReduxAction;
   };
 };
 

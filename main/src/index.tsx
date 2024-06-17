@@ -1,22 +1,15 @@
 import {createRoot} from 'react-dom/client';
 import {Provider} from 'react-redux';
 
-import store from 'ducks';
+import store, {history} from 'ducks';
 
-import App from 'App';
+import Navigator from 'navigator';
 
 const rootEl = document.getElementById('root') as HTMLDivElement;
 const container = createRoot(rootEl);
 
 container.render(
   <Provider store={store}>
-    <App />
+    <Navigator history={history} />
   </Provider>
 );
-// store().then((store) => {
-//   container.render(
-//     <Provider store={store}>
-//       <App />
-//     </Provider>
-//   );
-// });

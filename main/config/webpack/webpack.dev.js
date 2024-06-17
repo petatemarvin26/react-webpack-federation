@@ -20,7 +20,8 @@ module.exports = (env) => {
     devServer: {
       port: PORT,
       open: true,
-      hot: false
+      hot: false,
+      historyApiFallback: true
     },
     module: {
       rules: [
@@ -38,7 +39,8 @@ module.exports = (env) => {
       new ModuleFederationPlugin({
         name: 'main',
         remotes: {
-          auth: 'auth@http://localhost:3001/entry.js'
+          auth: 'auth@http://localhost:3001/entry.js',
+          report: 'report@http://localhost:3002/entry.js'
         },
         shared: sharedDeps
       })
