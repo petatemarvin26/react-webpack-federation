@@ -6,13 +6,17 @@ import SignUp from 'auth/pages/SignUp';
 import Statistics from 'report/pages/Statistics';
 import Graph from 'report/pages/Graph';
 
-import {TestPage} from 'pages';
+import {TestPage, TestPage2} from 'pages';
 
 const routeConfig: Array<RouteProps> = [
   {
     index: true,
     path: '/',
     element: <TestPage />
+  },
+  {
+    path: '/test2',
+    element: <TestPage2 />
   },
   {
     path: '/sign-in',

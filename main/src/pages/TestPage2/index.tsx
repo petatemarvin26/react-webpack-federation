@@ -5,7 +5,6 @@ import {Props} from './types';
 const TestPage: React.FC<Props> = ({navigate}) => {
   return (
     <div className={styles['test-pane']}>
-      <button onClick={() => navigate('/test2')}>TEST 2</button>
       <button onClick={() => navigate('/sign-in')}>SIGN IN</button>
       <button onClick={() => navigate('/sign-up')}>SIGN UP</button>
       <button onClick={() => navigate('/statistics')}>STATISTICS</button>

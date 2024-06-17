@@ -21,7 +21,7 @@ module.exports = (env) => {
     mode: 'production',
     output: {
       path: resolve('build'),
-      filename: './static/js/[hash:15].js'
+      filename: 'static/js/[hash:15].js'
     },
     module: {
       rules: [
@@ -50,7 +50,7 @@ module.exports = (env) => {
       }),
       new ModuleFederationPlugin({
         name: 'report',
-        filename: './static/js/entry.js',
+        filename: 'static/js/entry.js',
         exposes: {
           '.': resolve('src/App'),
           './pages/Statistics': resolve('src/pages/Statistics'),

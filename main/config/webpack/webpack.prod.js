@@ -21,7 +21,7 @@ module.exports = (env) => {
     mode: 'production',
     output: {
       path: resolve('build'),
-      filename: './static/js/[hash:15].js'
+      filename: 'static/js/[hash:15].js'
     },
     module: {
       rules: [
@@ -46,7 +46,7 @@ module.exports = (env) => {
         ]
       }),
       new CssPlugin({
-        filename: './static/css/[hash:15].css'
+        filename: 'static/css/[hash:15].css'
       }),
       new ModuleFederationPlugin({
         name: 'main',
