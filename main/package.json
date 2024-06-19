@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "start": "webpack serve --config ./config/webpack/webpack.config.js",
     "build": "npm run build:clean && webpack --config ./config/webpack/webpack.config.js",
     "build:clean": "rm -rf ./build",
-    "build:start": "npx serve -p 3000 ./build"
+    "build:start": "npx serve -p 3000 -s ./build"
   },
   "keywords": [],
   "author": "",

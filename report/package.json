@@ -7,7 +7,7 @@
     "start": "webpack serve --config ./config/webpack/webpack.config.js",
     "build": "npm run build:clean && webpack --config ./config/webpack/webpack.config.js",
     "build:clean": "rm -rf ./build",
-    "build:start": "npx serve -p 3002 ./build"
+    "build:start": "npx serve -p 3002 -s ./build"
   },
   "keywords": [],
   "author": "",
